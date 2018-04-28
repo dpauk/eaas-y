@@ -2,6 +2,7 @@ language: python
 python:
   - "3.6"
   - "3.6-dev"
+  - "3.7-dev"
 
 # Install dependencies
 install:
@@ -10,4 +11,4 @@ install:
 # Run tests and bandit
 script:
   - pytest
-  - bandit -r .
+  - bandit -r -l .
