@@ -11,4 +11,4 @@ install:
 # Run tests and bandit
 script:
   - pytest
-  - bandit -r -l .
+  - bandit -r -ll .
