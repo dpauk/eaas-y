@@ -1,2 +1,2 @@
 # eaas-y
-A really simple encryption-as-a-service application
+A really simple encryption-as-a-service application.
