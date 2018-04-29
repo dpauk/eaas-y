@@ -1,3 +1,4 @@
+import click
 from flask.cli import FlaskGroup
 import pytest 
 
@@ -6,8 +7,8 @@ from project import app
 cli = FlaskGroup(app)
 
 
-@cli.command()
-def test():
+@cli.command('test')
+def run_tests():
     """Runs tests without code coverage"""
     pytest.main()
 
