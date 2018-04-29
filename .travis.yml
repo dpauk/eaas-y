@@ -1,13 +1,32 @@
+sudo: required
+
 language: python
+
 python:
   - "3.6"
   - "3.6-dev"
 
-# Install dependencies
-install:
-  - pip install -r requirements.txt
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.18.0
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+before_script:
+  - docker-compose -f docker-compose-dev.yml up --build -d
 
 # Run tests and bandit
 script:
-  - pytest
-  - bandit -r -ll .
+  - docker-compose -f docker-compose-dev.yml run eaasy python manage.py test
+  - docker-compose -f docker-compose-dev.yml run eaasy python flask8 project
+  - docker-compose -f docker-compose-dev.yml run eaasy python pytest
+  - docker-compose -f docker-compose-dev.yml run eaasy python pytest bandit -r -ll .
+
+after_script:
+  - docker-compose -f docker-compose.yml down
