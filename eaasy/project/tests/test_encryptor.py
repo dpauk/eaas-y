@@ -1,7 +1,7 @@
 import pytest
 
 from project.tests.base import BaseTestCase
-from project.encryptor import Encryptor
+from project.api.models.encryptor import Encryptor
 
 
 class TestEncryptor(BaseTestCase):

@@ -3,7 +3,7 @@ bandit==1.4.0
 click==6.7
 coverage==4.5.1
 flake8==3.5.0
-Flask==0.12.3
+Flask==0.12.2
 Flask-CLI==0.4.0
 Flask-Testing==0.7.1
 gitdb2==2.0.3
