@@ -1,7 +1,7 @@
 from flask.cli import FlaskGroup
-import pytest 
+# import pytest 
 
-from eaasy import app
+from project import app
 
 cli = FlaskGroup(app)
 
