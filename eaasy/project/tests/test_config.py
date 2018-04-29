@@ -13,7 +13,7 @@ class TestDevelopmentConfig(TestCase):
         return app
 
     def test_app_is_development(self):
-        self.assertTrue(app.config['SECRET_KEY'] == 'my_precious')
+        self.assertTrue(app.config['SECRET_KEY'] == 'i_really_need_to_be_changed')
         self.assertFalse(current_app is None)
 
 
