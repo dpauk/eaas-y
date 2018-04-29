@@ -1,16 +1,17 @@
-import click
+import pytest
+
 from flask.cli import FlaskGroup
-import pytest 
 
 from project import app
 
 cli = FlaskGroup(app)
 
 
-@cli.command('test')
-def run_tests():
+@cli.command()
+def test():
     """Runs tests without code coverage"""
-    pytest.main()
+    # tests = pytest.main.
+    pytest.main(['project/tests'])
 
 
 if __name__ == '__main__':
