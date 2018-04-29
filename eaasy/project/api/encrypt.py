@@ -21,7 +21,6 @@ def encrypt_value(plaintext):
     return jsonify(response_object), 200
 
 
-
 # @encrypt_blueprint.route('/encrypt/ping', methods=['GET'])
 # def ping_pong():
 #     return jsonify({
