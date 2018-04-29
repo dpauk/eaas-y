@@ -6,7 +6,7 @@ from project import app
 cli = FlaskGroup(app)
 
 
-@cli.command
+@cli.command()
 def test():
     """Runs tests without code coverage"""
     pytest.main()
