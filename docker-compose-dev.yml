@@ -14,3 +14,4 @@ services:
     environment:
       - FLASK_DEBUG=1
       - APP_SETTINGS=project.config.DevelopmentConfig
+      - ENCRYPTION_KEY='f-DRgUjOaBW3nMb0KiBY_oEkqmIgpZUxeXoXn8Dgpgw='
